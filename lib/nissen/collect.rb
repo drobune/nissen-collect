@@ -1,0 +1,1 @@
+require 'nissen/collect/version'

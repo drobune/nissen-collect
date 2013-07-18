@@ -1,0 +1,27 @@
+= nissen-collect
+
+* {Homepage}[https://rubygems.org/gems/nissen-collect]
+* {Documentation}[http://rubydoc.info/gems/nissen-collect/frames]
+* {Email}[mailto:s.yuichi227 at gmail.com]
+
+== Description
+
+TODO: Description
+
+== Features
+
+== Examples
+
+  require 'nissen/collect'
+
+== Requirements
+
+== Install
+
+  $ gem install nissen-collect
+
+== Copyright
+
+Copyright (c) 2013 yu1ch1
+
+See LICENSE.txt for details.
