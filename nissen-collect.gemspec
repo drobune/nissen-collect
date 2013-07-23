@@ -5,8 +5,8 @@ require File.expand_path('../lib/nissen/collect/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.name          = "nissen-collect"
   gem.version       = Nissen::Collect::VERSION
-  gem.summary       = %q{TODO: Summary}
-  gem.description   = %q{TODO: Description}
+  gem.summary       = %q{nissen-collect API wrapper}
+  gem.description   = %q{transaction,getauthor,modifytransaction,pdrequest,cancel}
   gem.license       = "MIT"
   gem.authors       = ["yu1ch1"]
   gem.email         = "s.yuichi227@gmail.com"
