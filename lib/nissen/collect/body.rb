@@ -1,11 +1,13 @@
+# -*- encoding: utf-8 -*-
+
 module NissenCollect
 
   #リクエストボディ
   class body
 
     # オブジェクトのxmlパラメータに変換する
-    # @param type:object
-    # @out type:xml
+    # @param [object] obj bodyを継承しているインスタンス
+    # @return [xml] '' xml
     def convert_to_xml obj
       obj_json = JSON.load(obj.to_json) #fix_me! 一度jsonにしてからhashにしています
       return obj_json.to_xml(root:obj.convert_class_name)
@@ -22,7 +24,6 @@ module NissenCollect
 
     class ShopInfo
       attr_reader :shopCode,:shopPassword,:terminalId
-      include HttpInfo2
       def initialize
         @shopCode = ENV['NISSEN_COLLECT_SHOPCODE']
         @shopPassword = ENV['NISSEN_COLLECT_PASSWORD']
