@@ -3,7 +3,7 @@
 module NissenCollect
 
   #リクエストボディ
-  class body
+  class Body
 
     # オブジェクトのxmlパラメータに変換する
     # @param [object] obj bodyを継承しているインスタンス
@@ -14,7 +14,8 @@ module NissenCollect
     end
 
     # 自身のクラス名の最初に一文字を小文字にして返す
-    # @out type:string
+    # @return type:string
+    #private
     def convert_class_name
       classname = self.class.to_s
       first = classname[0].downcase!
@@ -43,9 +44,18 @@ module NissenCollect
     end
 
     class Delivery
+      def deliveryCustomer
+        @deliveryCustomer
+        def test
+          @test = ''
+        end
+        #deliveryCustomer = DeliveryCustomer.new
+      end
+      class DeliveryCustomer
       attr_accessor :deliveryCustomer,:fullName,:firstName,:lastName,:fullKanaName,
         :firstKanaName,:lastKanaName,:zipCode,:address1,:address2,:address3,
         :companyName,:departmentName,:tel,:email
+      end
     end
 
     class Detail
@@ -60,4 +70,5 @@ module NissenCollect
       attr_accessor :pdcompanycode,:slipno,:address1,:address2,:address3
     end
   end
+
 end
