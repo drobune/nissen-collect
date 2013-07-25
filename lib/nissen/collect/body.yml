@@ -1,10 +1,10 @@
 #注文情報登録API リクエストパラメータ
 autotransaction:
   shopInfo:
-    shopCode:
-    shopPassword:
-    terminalId:
-    httpInfo:
+    shopCode: <%= ENV['NISSEN_COLLECT_SHOPCODE'] %>
+    shopPassword: <%= ENV['NISSEN_COLLECT_PASSWORD'] %>
+    terminalId: <%= ENV['NISSEN_COLLECT_TERMINALID'] %>
+  httpInfo:
     httpHeader:
     deviceInfo:
   buyer:

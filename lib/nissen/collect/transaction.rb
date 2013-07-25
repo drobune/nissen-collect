@@ -2,20 +2,16 @@
 module NissenCollect
 
   class Transaction
-    #TRANSACTION_URL = 'https://collect-operation.nissen.co.jp/direct/autotransaction.do'
-    TRANSACTION = 'direct/autotransaction.do'
+    attr_accessor :body
+    @@transaction_path = 'direct/autotransaction.do'
 
-    def initialize
-      @shopInfo = ShopInfo.new
-      @httpInfo = HttpInfo.new
-      @buyer = Buyer.new
-      @delivery = Delivery.new
-      @
+    def initialize body=nil#=REQUEST_BODY[:autotransaction])
+      @body = body ? body |　SHOPINFO.merge(HTTPINFO,BUYER)
     end
 
     def call
       connect = NissenCollect::Client.new
-      connect.request(get)
+      connect.request('get',@@transaction_path,@body)
     end
 
   end
