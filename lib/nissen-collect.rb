@@ -14,7 +14,7 @@ module NissenCollect
   BUYER = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/buyer.yml'))
   DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/deliveries.yml'))
   PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('n/issen-collect/body/Pdrequest.yml'))
-  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/transaction.yml'))
+  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('/enissen-collect/body/transaction.yml'))
 
   class Client
 
