@@ -12,7 +12,7 @@ TODO: Description
 
 == Examples
 
-  require 'nissen/collect'
+  require 'nissen-collect'
 
 == Requirements
 
