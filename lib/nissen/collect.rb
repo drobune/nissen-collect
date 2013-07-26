@@ -9,7 +9,6 @@ require 'erb'
 # nissen collect APIwrapper
 module NissenCollect
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  #REQUEST_BODY = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/body.yml')).result))
   SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/body/shopInfo.yml')).result))
   HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/httpInfo.yml'))
   BUYER = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/buyer.yml'))

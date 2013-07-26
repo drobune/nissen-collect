@@ -6,7 +6,7 @@ module NissenCollect
     @@transaction_path = 'direct/autotransaction.do'
 
     def initialize body=nil
-      @body = body ? body : [SHOPINFO,HTTPINFO,BUYER,DELIVERIES].inject {|union,hash| union.merge hash}
+      @body = body ? body : [SHOPINFO,TRANSACTION].inject {|union,hash| union.merge hash}
     end
 
     def call
