@@ -9,12 +9,12 @@ require 'erb'
 # nissen collect APIwrapper
 module NissenCollect
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./nissen-collect/body/shopInfo.yml')).result))
-  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('./nissen-collect/body/httpInfo.yml'))
-  BUYER = HashWithIndifferentAccess.new(YAML.load_file('./nissen-collect/body/buyer.yml'))
-  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('./nissen-collect/body/deliveries.yml'))
-  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('./nissen-collect/body/Pdrequest.yml'))
-  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('./nissen-collect/body/transaction.yml'))
+  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./body/shopInfo.yml')).result))
+  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('./body/httpInfo.yml'))
+  BUYER = HashWithIndifferentAccess.new(YAML.load_file('./body/buyer.yml'))
+  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('./body/deliveries.yml'))
+  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('./body/Pdrequest.yml'))
+  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('./body/transaction.yml'))
 
   class Client
 
