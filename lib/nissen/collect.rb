@@ -9,19 +9,18 @@ require 'erb'
 # nissen collect APIwrapper
 module NissenCollect
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  REQUEST_BODY = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/body.yml')).result))
-
-  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/shopInfo.yml')).result))
-  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('./collect/httpInfo.yml'))
-  BUYER = HashWithIndifferentAccess.new(YAML.load_file('./collect/buyer.yml'))
-  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('./collect/deliveries.yml'))
-  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('./collect/Pdrequest.yml'))
-  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('./collect/transaction.yml'))
+  #REQUEST_BODY = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/body.yml')).result))
+  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('./collect/body/shopInfo.yml')).result))
+  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/httpInfo.yml'))
+  BUYER = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/buyer.yml'))
+  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/deliveries.yml'))
+  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/Pdrequest.yml'))
+  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('./collect/body/transaction.yml'))
 
   class Client
 
     # リクエストの作成
-    # @param [Chr] target_host リクエスト先ホスト
+    # @param [String] target_host リクエスト先ホスト
     # @param [Xml] params リクエストボディ
     # @return [Proc] request_setup リクエスト
     def request_setup target_path, params
@@ -29,7 +28,6 @@ module NissenCollect
         req.body = params
         req.url target_path
       end
-
     end
 
     # httpsコネクションの作成
@@ -43,17 +41,18 @@ module NissenCollect
     end
 
     # httpsリクエスト送信
-
+    # @param [String] method 実行するhttpメソッド
+    # @param [String] target_path リクエスト送信先パス
+    # @params [Xml] params リクエストのbody
+    # @return [Hash] httpレスポンス
     def request method, target_path, params
-      request_setup = request_setup(target_host, params)
+      request_setup = request_setup(target_path, params)
       connection.send(method.to_sym, &request_setup).env
       rescue Faraday::Error::ClientError
         raise Twitter::Error::ClientError
       rescue JSON::ParserError
         raise Twitter::Error::ParserError
     end
-
   end
 
 end
-
