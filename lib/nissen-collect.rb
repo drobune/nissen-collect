@@ -1,20 +1,25 @@
 # -*- encoding: utf-8 -*-
-require 'nissen-collect/version'
 require 'yaml'
 require 'faraday'
 require 'active_support/core_ext'
 require 'erb'
+require 'nissen-collect/version'
+require 'nissen-collect/transaction.rb'
+require 'nissen-collect/getauthor.rb'
+require 'nissen-collect/modifytransaction.rb'
+require 'nissen-collect/pdrequest.rb'
+require 'nissen-collect/cancel.rb'
 
 # nissen collect APIwrapper
 module NissenCollect
-  $:.unshift File.dirname(__FILE__)
+  $:.unshift(File.dirname(File.expand_path(__FILE__)))
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('/nissen-collect/body/shopInfo.yml')).result))
-  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/httpInfo.yml'))
-  BUYER = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/buyer.yml'))
-  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('/nissen-collect/body/deliveries.yml'))
-  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('n/issen-collect/body/Pdrequest.yml'))
-  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('/enissen-collect/body/transaction.yml'))
+  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('lib/nissen-collect/body/shopInfo.yml')).result))
+  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/httpInfo.yml'))
+  BUYER = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/buyer.yml'))
+  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/deliveries.yml'))
+  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/PdRequest.yml'))
+  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/transaction.yml'))
 
   class Client
 
@@ -42,10 +47,10 @@ module NissenCollect
     # httpsリクエスト送信
     # @param [String] method 実行するhttpメソッド
     # @param [String] target_path リクエスト送信先パス
-    # @params [Xml] params リクエストのbody
+    # @params [Hash] params リクエストのbody
     # @return [Hash] httpレスポンス
     def request method, target_path, params
-      request_setup = request_setup(target_path, params)
+      request_setup = request_setup(target_path, params.to_xml(root:'request'))
       connection.send(method.to_sym, &request_setup).env
       rescue Faraday::Error::ClientError
         raise Twitter::Error::ClientError
