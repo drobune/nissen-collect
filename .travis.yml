@@ -1,7 +1,8 @@
 language: ruby
-# rvm:
-#   - 1.9.2
-#   - 1.9.3
-#   - rbx-19mode
-rbenv:
-  - 1.9.3
+ rvm:
+   - rbx-19mode
+   - 1.9.2
+   - 1.9.3
+ matrix:
+  allow_failures:
+    - rvm: 1.9.3
