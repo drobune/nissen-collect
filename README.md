@@ -18,11 +18,11 @@ So, you'll need to configure enviroment varuables.
 
 ニッセン社より付与されたID,PASSを環境変数に設定してください。
 
-'''ruby
+```ruby
 ENV['NISSEN_COLLECT_SHOPCODE'] = #shopCode from nissen
 ENV['NISSEN_COLLECT_PASSWORD'] = #shopPassword from nissen
 ENV['NISSEN_COLLECT_TERMINALID'] = #terminalId: from nissen
-'''
+```
 
 ### Usage 使用法
 Next 5 APIs can call.(only production server@nissen)
