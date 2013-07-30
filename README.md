@@ -1,12 +1,12 @@
 
-[gem]: https://rubygems.org/gems/nissen-collect
-[travis]: https://travis-ci.org/yu1ch1/nissen-collect
+[gem](https://rubygems.org/gems/nissen-collect)
+[travis](https://travis-ci.org/yu1ch1/nissen-collect)
 
 ###  nissen スマート接続 API wrapper
 概要はニッセン社のドキュメントを参照してください。
 
-[nissen]: http://collect.nissen.co.jp/atobarai-ec/
-[php module@nissen]: http://www.ec-cube.net/products/detail.php?product_id=371
+[nissen](http://collect.nissen.co.jp/atobarai-ec/)
+[php module@nissen](http://www.ec-cube.net/products/detail.php?product_id=371)
 
 ### Installation　導入
     gem install nissen-collect
