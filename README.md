@@ -1,17 +1,16 @@
-# nissen-collect Ruby Gem
 
 [gem]: https://rubygems.org/gems/nissen-collect
 [travis]: https://travis-ci.org/yu1ch1/nissen-collect
 
-##  nissen スマート接続 API wrapper
+###  nissen スマート接続 API wrapper
 概要はニッセン社のドキュメントを参照してください。
 [nissen]: http://collect.nissen.co.jp/atobarai-ec/
 [php module@nissen]: http://www.ec-cube.net/products/detail.php?product_id=371
 
-## Installation　導入
+### Installation　導入
     gem install nissen-collect
 
-## Configuration　設定
+### Configuration　設定
 nissen-collect requires you to authenticate via https.
 So, you'll need to configure enviroment varuables.
 
@@ -23,8 +22,9 @@ ENV['NISSEN_COLLECT_PASSWORD'] = #shopPassword from nissen
 ENV['NISSEN_COLLECT_TERMINALID'] = #terminalId: from nissen
 '''
 
-##　Usage 使用法
+### Usage 使用法
 Next 5 APIs can call.(only production server@nissen)
+
 次の5個のAPIを叩けます。
 
 * Transaction（注文情報登録）
@@ -32,48 +32,48 @@ Next 5 APIs can call.(only production server@nissen)
 ```ruby
 request = NissenCollect:Transaction.new
 request.body
-=> {"shopInfo"=>{"shopCode"=>nil, "shopPassword"=>nil, "terminalId"=>nil},
- "httpInfo"=>{"httpHeader"=>nil, "deviceInfo"=>nil},
+=> {"shopInfo"=>{"shopCode"=> , "shopPassword"=> , "terminalId"=> },
+ "httpInfo"=>{"httpHeader"=> , "deviceInfo"=> },
  "buyer"=>
-  {"shopTransactionId"=>nil,
-   "shopOrderDate"=>nil,
-   "fullName"=>nil,
-   "firstName"=>nil,
-   "lastName"=>nil,
-   "fullKanaName"=>nil,
-   "firstKanaName"=>nil,
-   "lastKanaName"=>nil,
-   "tel"=>nil,
-   "mobile"=>nil,
-   "email"=>nil,
-   "mobileEmail"=>nil,
-   "zipCode"=>nil,
-   "address1"=>nil,
-   "address2"=>nil,
-   "address3"=>nil,
-   "companyName"=>nil,
-   "departmentName"=>nil,
-   "billedAmount"=>nil,
-   "paymentType"=>nil},
+  {"shopTransactionId"=> ,
+   "shopOrderDate"=> ,
+   "fullName"=> ,
+   "firstName"=> ,
+   "lastName"=> ,
+   "fullKanaName"=> ,
+   "firstKanaName"=> ,
+   "lastKanaName"=> ,
+   "tel"=> ,
+   "mobile"=> ,
+   "email"=> ,
+   "mobileEmail"=> ,
+   "zipCode"=> ,
+   "address1"=> ,
+   "address2"=> ,
+   "address3"=> ,
+   "companyName"=> ,
+   "departmentName"=> ,
+   "billedAmount"=> ,
+   "paymentType"=> },
  "deliveries"=>
   {"delivery"=>
-    {"deliveryCustomer"=>nil,
-     "fullName"=>nil,
-     "firstName"=>nil,
-     "lastName"=>nil,
-     "fullKanaName"=>nil,
-     "firstKanaName"=>nil,
-     "lastKanaName"=>nil,
-     "zipCode"=>nil,
-     "address1"=>nil,
-     "address2"=>nil,
-     "address3"=>nil,
-     "companyName"=>nil,
-     "departmentName"=>nil,
-     "tel"=>nil,
-     "email"=>nil},
+    {"deliveryCustomer"=> ,
+     "fullName"=> ,
+     "firstName"=> ,
+     "lastName"=> ,
+     "fullKanaName"=> ,
+     "firstKanaName"=> ,
+     "lastKanaName"=> ,
+     "zipCode"=> ,
+     "address1"=> ,
+     "address2"=> ,
+     "address3"=> ,
+     "companyName"=> ,
+     "departmentName"=> ,
+     "tel"=> ,
+     "email"=> },
    "details"=>
-    {"detail"=>{"detailId"=>nil, "detailName"=>nil, "detailQuantity"=>nil}}}
+    {"detail"=>{"detailId"=> , "detailName"=> , "detailQuantity"=> }}}
 }
 
 request.call
@@ -85,28 +85,28 @@ request.call
 request = NissenCollect::Getauthor.new
 
 request.body
-=> {"shopInfo"=>{"shopCode"=>nil, "shopPassword"=>nil, "terminalId"=>nil},
+=> {"shopInfo"=>{"shopCode"=> , "shopPassword"=> , "terminalId"=> },
  "buyer"=>
-  {"shopTransactionId"=>nil,
-   "shopOrderDate"=>nil,
-   "fullName"=>nil,
-   "firstName"=>nil,
-   "lastName"=>nil,
-   "fullKanaName"=>nil,
-   "firstKanaName"=>nil,
-   "lastKanaName"=>nil,
-   "tel"=>nil,
-   "mobile"=>nil,
-   "email"=>nil,
-   "mobileEmail"=>nil,
-   "zipCode"=>nil,
-   "address1"=>nil,
-   "address2"=>nil,
-   "address3"=>nil,
-   "companyName"=>nil,
-   "departmentName"=>nil,
-   "billedAmount"=>nil,
-   "paymentType"=>nil}}
+  {"shopTransactionId"=> ,
+   "shopOrderDate"=> ,
+   "fullName"=> ,
+   "firstName"=> ,
+   "lastName"=> ,
+   "fullKanaName"=> ,
+   "firstKanaName"=> ,
+   "lastKanaName"=> ,
+   "tel"=> ,
+   "mobile"=> ,
+   "email"=> ,
+   "mobileEmail"=> ,
+   "zipCode"=> ,
+   "address1"=> ,
+   "address2"=> ,
+   "address3"=> ,
+   "companyName"=> ,
+   "departmentName"=> ,
+   "billedAmount"=> ,
+   "paymentType"=> }}
 
 request.call
 ```
@@ -117,47 +117,47 @@ request.call
 request = NissenCollect::Modifytransaction.new
 
 request.body
-=> {"shopInfo"=>{"shopCode"=>nil, "shopPassword"=>nil, "terminalId"=>nil},
+=> {"shopInfo"=>{"shopCode"=> , "shopPassword"=> , "terminalId"=> },
  "buyer"=>
-  {"shopTransactionId"=>nil,
-   "shopOrderDate"=>nil,
-   "fullName"=>nil,
-   "firstName"=>nil,
-   "lastName"=>nil,
-   "fullKanaName"=>nil,
-   "firstKanaName"=>nil,
-   "lastKanaName"=>nil,
-   "tel"=>nil,
-   "mobile"=>nil,
-   "email"=>nil,
-   "mobileEmail"=>nil,
-   "zipCode"=>nil,
-   "address1"=>nil,
-   "address2"=>nil,
-   "address3"=>nil,
-   "companyName"=>nil,
-   "departmentName"=>nil,
-   "billedAmount"=>nil,
-   "paymentType"=>nil},
+  {"shopTransactionId"=> ,
+   "shopOrderDate"=> ,
+   "fullName"=> ,
+   "firstName"=> ,
+   "lastName"=> ,
+   "fullKanaName"=> ,
+   "firstKanaName"=> ,
+   "lastKanaName"=> ,
+   "tel"=> ,
+   "mobile"=> ,
+   "email"=> ,
+   "mobileEmail"=> ,
+   "zipCode"=> ,
+   "address1"=> ,
+   "address2"=> ,
+   "address3"=> ,
+   "companyName"=> ,
+   "departmentName"=> ,
+   "billedAmount"=> ,
+   "paymentType"=> },
  "deliveries"=>
   {"delivery"=>
-    {"deliveryCustomer"=>nil,
-     "fullName"=>nil,
-     "firstName"=>nil,
-     "lastName"=>nil,
-     "fullKanaName"=>nil,
-     "firstKanaName"=>nil,
-     "lastKanaName"=>nil,
-     "zipCode"=>nil,
-     "address1"=>nil,
-     "address2"=>nil,
-     "address3"=>nil,
-     "companyName"=>nil,
-     "departmentName"=>nil,
-     "tel"=>nil,
-     "email"=>nil},
+    {"deliveryCustomer"=> ,
+     "fullName"=> ,
+     "firstName"=> ,
+     "lastName"=> ,
+     "fullKanaName"=> ,
+     "firstKanaName"=> ,
+     "lastKanaName"=> ,
+     "zipCode"=> ,
+     "address1"=> ,
+     "address2"=> ,
+     "address3"=> ,
+     "companyName"=> ,
+     "departmentName"=> ,
+     "tel"=> ,
+     "email"=> },
    "details"=>
-    {"detail"=>{"detailId"=>nil, "detailName"=>nil, "detailQuantity"=>nil}}}}
+    {"detail"=>{"detailId"=> , "detailName"=> , "detailQuantity"=> }}}}
 
 request.call
 ```
@@ -168,18 +168,17 @@ request.call
 request = NissenCollect::Pdrequest.new
 
 request.body
-=> {"shopInfo"=>{"shopCode"=>nil, "shopPassword"=>nil, "terminalId"=>nil},
+=> {"shopInfo"=>{"shopCode"=> , "shopPassword"=> , "terminalId"=> },
  "transaction"=>
-  {"nissenTransactionId"=>nil, "shopTransactionId"=>nil, "billedAmount"=>nil},
+  {"nissenTransactionId"=> , "shopTransactionId"=> , "billedAmount"=> },
  "PdRequest"=>
-  {"pdcompanycode"=>nil,
-   "slipno"=>nil,
-   "address1"=>nil,
-   "address2"=>nil,
-   "address3"=>nil}}
+  {"pdcompanycode"=> ,
+   "slipno"=> ,
+   "address1"=> ,
+   "address2"=> ,
+   "address3"=> }}
 
 request.call
-
 ```
 
 * Cancel(キャンセル登録)
@@ -188,13 +187,14 @@ request.call
 request = NissenCollect::Cancel.new
 
 request.body
-=> {"shopInfo"=>{"shopCode"=>nil, "shopPassword"=>nil, "terminalId"=>nil},
+=> {"shopInfo"=>{"shopCode"=> , "shopPassword"=> , "terminalId"=> },
  "transaction"=>
-  {"nissenTransactionId"=>nil, "shopTransactionId"=>nil, "billedAmount"=>nil}}
+  {"nissenTransactionId"=> , "shopTransactionId"=> , "billedAmount"=> }}
 
 request.call
 ```
-## Copyright
+
+### Copyright
 Copyright (c) 2013 Yuichi Sano.
 See [LICENSE][] for details.
 
