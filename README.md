@@ -4,6 +4,7 @@
 
 ###  nissen スマート接続 API wrapper
 概要はニッセン社のドキュメントを参照してください。
+
 [nissen]: http://collect.nissen.co.jp/atobarai-ec/
 [php module@nissen]: http://www.ec-cube.net/products/detail.php?product_id=371
 
