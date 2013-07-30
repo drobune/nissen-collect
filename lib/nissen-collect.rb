@@ -12,14 +12,13 @@ require 'nissen-collect/cancel.rb'
 
 # nissen collect APIwrapper
 module NissenCollect
-  $:.unshift(File.dirname(File.expand_path(__FILE__)))
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read('lib/nissen-collect/body/shopInfo.yml')).result))
-  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/httpInfo.yml'))
-  BUYER = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/buyer.yml'))
-  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/deliveries.yml'))
-  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/PdRequest.yml'))
-  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file('lib/nissen-collect/body/transaction.yml'))
+  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read(File.expand_path('lib/nissen-collect/body/shopInfo.yml',__FILE__))).result))
+  HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file(File.expand_path('lib/nissen-collect/body/httpInfo.yml', __FILE__))
+  BUYER = HashWithIndifferentAccess.new(YAML.load_file(File.expan_path('lib/nissen-collect/body/buyer.yml', __FILE__))
+  DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file(File.expan_path('lib/nissen-collect/body/deliveries.yml', __FILE__))
+  PDREQUEST = HashWithIndifferentAccess.new(YAML.load_file(File.expan_path('lib/nissen-collect/body/PdRequest.yml', __FILE__))
+  TRANSACTION = HashWithIndifferentAccess.new(YAML.load_file(File.expan_path('lib/nissen-collect/body/transaction.yml', __FILE__))
 
   class Client
 
