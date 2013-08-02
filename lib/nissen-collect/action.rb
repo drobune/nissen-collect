@@ -5,7 +5,7 @@ module NissenCollect
 
     # 環境変数を設定する
     def initialize
-      SHOPINFO = {
+      SHOPINFO => {
         :shopInfo=>{
           :shopCode=> ENV['NISSEN_COLLECT_SHOPCODE'],
           :shopPassword=> ENV['NISSEN_COLLECT_PASSWORD'],
