@@ -8,12 +8,11 @@ require 'nissen-collect/transaction.rb'
 require 'nissen-collect/getauthor.rb'
 require 'nissen-collect/modifytransaction.rb'
 require 'nissen-collect/pdrequest.rb'
-require 'nissen-collect/cancel.rb'
+require 'nissen-collect/cancl.rb'
 
 # nissen collect APIwrapper
 module NissenCollect
   ROOT_HOST = 'https://collect-operation.nissen.co.jp/'
-  SHOPINFO = HashWithIndifferentAccess.new(YAML.load(ERB.new(File.read(File.expand_path('../nissen-collect/body/shopInfo.yml',__FILE__))).result))
   HTTPINFO = HashWithIndifferentAccess.new(YAML.load_file(File.expand_path('../nissen-collect/body/httpInfo.yml', __FILE__)))
   BUYER = HashWithIndifferentAccess.new(YAML.load_file(File.expand_path('../nissen-collect/body/buyer.yml', __FILE__)))
   DELIVERIES = HashWithIndifferentAccess.new(YAML.load_file(File.expand_path('../nissen-collect/body/deliveries.yml', __FILE__)))

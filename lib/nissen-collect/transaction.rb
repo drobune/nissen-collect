@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 module NissenCollect
 
-  class Transaction
+  class Transaction < Action
     attr_accessor :body
     @@transaction_path = 'direct/autotransaction.do'
 
