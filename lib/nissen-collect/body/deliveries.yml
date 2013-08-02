@@ -2,20 +2,20 @@
 deliveries:
   delivery:
     deliveryCustomer:
-    fullName:
-    firstName:
-    lastName:
-    fullKanaName:
-    firstKanaName:
-    lastKanaName:
-    zipCode:
-    address1:
-    address2:
-    address3:
-    companyName:
-    departmentName:
-    tel:
-    email:
+      fullName:
+      firstName:
+      lastName:
+      fullKanaName:
+      firstKanaName:
+      lastKanaName:
+      zipCode:
+      address1:
+      address2:
+      address3:
+      companyName:
+      departmentName:
+      tel:
+      email:
   details:
     detail:
       detailId:
