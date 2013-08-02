@@ -9,7 +9,7 @@ require 'nissen-collect/transaction.rb'
 require 'nissen-collect/getauthor.rb'
 require 'nissen-collect/modifytransaction.rb'
 require 'nissen-collect/pdrequest.rb'
-require 'nissen-collect/cancl.rb'
+require 'nissen-collect/cancel.rb'
 
 # nissen collect APIwrapper
 module NissenCollect
