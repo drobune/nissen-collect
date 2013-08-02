@@ -51,10 +51,6 @@ module NissenCollect
     def request method, target_path, params
       request_setup = request_setup(target_path, params.to_xml(root:'request'))
       connection.send(method.to_sym, &request_setup).env
-      rescue Faraday::Error::ClientError
-        raise Twitter::Error::ClientError
-      rescue JSON::ParserError
-        raise Twitter::Error::ParserError
     end
   end
 
