@@ -11,7 +11,7 @@ module NissenCollect
           :shopPassword=> ENV['NISSEN_COLLECT_PASSWORD'],
           :terminalId=> ENV['NISSEN_COLLECT_TERMINALID']
         }
-
+      }
     end
 
   end
