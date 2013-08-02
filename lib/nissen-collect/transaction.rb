@@ -8,7 +8,7 @@ module NissenCollect
     # @bodyを初期化する
     # @param [Hash] body 生成時引数
     def initialize body=nil
-      super
+      super()
       @body = body ? body : [@@shopInfo,HTTPINFO,BUYER,DELIVERIES].inject {|union,hash| union.merge hash}
     end
 
