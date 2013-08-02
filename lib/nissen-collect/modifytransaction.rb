@@ -1,14 +1,15 @@
 # -*- encoding: utf-8 -*-
 module NissenCollect
 
-  class Modifytransaction
+  class Modifytransaction < Action
     attr_accessor :body
     @@transaction_path = 'direct/automodifytransaction.do'
 
     # @bodyを初期化する
     # @param [Hash] body 生成時引数
     def initialize body=nil
-      @body = body ? body : [SHOPINFO,BUYER,DELIVERIES].inject {|union,hash| union.merge hash}
+      super()
+      @body = body ? body : [@@shopInfo,BUYER,DELIVERIES].inject {|union,hash| union.merge hash}
     end
 
     # APIコールを行う
