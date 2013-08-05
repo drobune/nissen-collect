@@ -1,7 +1,7 @@
 #注文情報登録API リクエストパラメータ
 deliveries:
   delivery:
-    deliveryCustomer: ''
+    deliveryCustomer:
       fullName: ''
       firstName: ''
       lastName: ''
@@ -16,8 +16,8 @@ deliveries:
       departmentName: ''
       tel: ''
       email: ''
-  details: ''
-    detail: ''
+  details:
+    detail:
       detailId: ''
       detailName: ''
       detailName: ''
