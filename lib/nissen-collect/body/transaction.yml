@@ -1,4 +1,4 @@
 transaction:
-  nissenTransactionId:
-  shopTransactionId:
-  billedAmount:
+  nissenTransactionId: ''
+  shopTransactionId: ''
+  billedAmount: ''

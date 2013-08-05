@@ -1,24 +1,24 @@
 #注文情報登録API リクエストパラメータ
 deliveries:
   delivery:
-    deliveryCustomer:
-      fullName:
-      firstName:
-      lastName:
-      fullKanaName:
-      firstKanaName:
-      lastKanaName:
-      zipCode:
-      address1:
-      address2:
-      address3:
-      companyName:
-      departmentName:
-      tel:
-      email:
-  details:
-    detail:
-      detailId:
-      detailName:
-      detailName:
-      detailQuantity:
+    deliveryCustomer: ''
+      fullName: ''
+      firstName: ''
+      lastName: ''
+      fullKanaName: ''
+      firstKanaName: ''
+      lastKanaName: ''
+      zipCode: ''
+      address1: ''
+      address2: ''
+      address3: ''
+      companyName: ''
+      departmentName: ''
+      tel: ''
+      email: ''
+  details: ''
+    detail: ''
+      detailId: ''
+      detailName: ''
+      detailName: ''
+      detailQuantity: ''

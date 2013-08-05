@@ -9,8 +9,8 @@ module NissenCollect
     # @param [Hash] body 生成時引数
     def initialize
       super
-      @transaction = TRANSACTION
-      @pdrequest = PDREQUEST
+      @transaction = Marshal.load(Marshal.dump(TRANSACTION))
+      @pdrequest = Marshal.load(Marshal.dump(PDREQUEST))
     end
 
     # APIコールを行う

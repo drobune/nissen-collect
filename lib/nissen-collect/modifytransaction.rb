@@ -9,8 +9,8 @@ module NissenCollect
     # @param [Hash] body 生成時引数
     def initialize
       super
-      @buyer = BUYER
-      @deliveries = DELIVERIES
+      @buyer = Marshal.load(Marshal.dump(BUYER))
+      @deliveries = Marshal.load(Marshal.dump(DELIVERIES))
     end
 
     # APIコールを行う

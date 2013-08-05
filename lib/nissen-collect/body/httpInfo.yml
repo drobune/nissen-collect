@@ -1,4 +1,4 @@
 #注文情報登録API リクエストパラメータ
 httpInfo:
-  httpHeader:
-  deviceInfo:
+  httpHeader: ''
+  deviceInfo: ''
