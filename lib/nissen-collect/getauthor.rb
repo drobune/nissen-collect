@@ -2,7 +2,7 @@
 module NissenCollect
 
   class Getauthor < Action
-    attr_accessor :buyer
+    attr_accessor :transaction
     @@transaction_path = 'direct/autogetauthor.do'
 
     # @bodyを初期化する
