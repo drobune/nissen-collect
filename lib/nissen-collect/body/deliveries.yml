@@ -16,9 +16,9 @@ deliveries:
       departmentName: ''
       tel: ''
       email: ''
-  details:
-    detail:
-      detailId: ''
-      detailName: ''
-      detailName: ''
-      detailQuantity: ''
+    details:
+     detail:
+       detailId: ''
+       detailName: ''
+       detailName: ''
+       detailQuantity: ''
