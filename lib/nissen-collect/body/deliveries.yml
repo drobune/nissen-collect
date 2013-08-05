@@ -20,5 +20,5 @@ deliveries:
      detail:
        detailId: ''
        detailName: ''
-       detailPrince: ''
+       detailPrice: ''
        detailQuantity: ''
