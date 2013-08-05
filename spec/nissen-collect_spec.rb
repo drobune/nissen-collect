@@ -8,7 +8,7 @@ describe NissenCollect do
   end
 
   it "should have Hash constants" do
-    ['SHOPINFO','HTTPINFO','BUYER','DELIVERIES','PDREQUEST','TRANSACTION'].map{ |constant|
+    ['HTTPINFO','BUYER','DELIVERIES','PDREQUEST','TRANSACTION'].map{ |constant|
     subject.const_get(constant).should_not be_empty}
   end
 
