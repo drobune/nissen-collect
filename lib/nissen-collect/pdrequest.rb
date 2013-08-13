@@ -3,7 +3,7 @@ module NissenCollect
 
   class Pdrequest < Action
     attr_accessor :transaction,:pdrequest
-    @@transaction_path = 'direct/autotransaction.do'
+    @@transaction_path = 'direct/autopdrequest.do'
 
     # @bodyを初期化する
     # @param [Hash] body 生成時引数
